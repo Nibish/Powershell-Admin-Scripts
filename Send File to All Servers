@@ -1,0 +1,15 @@
+$servers = get-content "\\xyz\xxx.txt"
+
+#Change the source as needed. This is the file that will get sent to all servers.
+$source = "\\xyz\xxx.msi"
+
+#Where do you want the file to be put?
+$destination = "C$\Software"
+
+foreach ($server in $servers) {
+if ((Test-Path -Path \\$server\$destination)){
+copy-item $source -destination \\$server\$destination -recurse
+} else {
+"$server\$destination is not reachable or does not exist"
+}
+}
