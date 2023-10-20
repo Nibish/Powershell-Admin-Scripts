@@ -1,5 +1,5 @@
 #Starts Trellix Audit Manager
-$Computers = "CO39W47AAAN1002"
+$Computers = "xxxx"
  
 
 foreach ($Computer IN $Computers) {
